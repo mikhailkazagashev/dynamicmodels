@@ -1,0 +1,21 @@
+﻿<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>dynamic models</title>
+		<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/admin/css/widgets.css"/>
+	</head>
+	<body>
+		<div align="center">
+		<h2> Выберите yaml файл с описанием моделей </h2>
+		{% if error %}<h3 style="color:red">{{error}}</h3>{% endif %}
+		<form action="" method="post"
+			{% if form.is_multipart %}enctype="multipart/form-data"{% endif %}>
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" value="Submit" />
+		</form>
+		</div>
+	</body>
+ </html>

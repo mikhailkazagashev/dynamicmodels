@@ -1,0 +1,15 @@
+{% load dict_tags %}
+<table cellspacing="0">
+<tr>
+	{% for field in fields %}
+		<th>{{ field.verbose_name }}</th>
+	{% endfor %}
+</tr>
+	{% for obj in objects %}
+<tr>
+	{% for field in fields %}
+		<td>{{obj|keyvalue:field.name}}</td>
+	{% endfor %}
+</tr>
+	{% endfor %} 
+</table>

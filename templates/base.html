@@ -1,0 +1,47 @@
+﻿{% load dajaxice_templatetags %}
+{% load staticfiles %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>dynamic models</title>
+  <style type="text/css">
+   BODY {
+    padding: 0; 
+    margin: 0; 
+   }
+   #list_container {
+    position: absolute;
+    width: 190px; 
+    left: 0; 
+    background: #e0e0e0; 
+    padding: 5px;
+   }
+   #model_info {
+    margin-left: 200px;
+    padding: 10px;
+   }
+   H1 {
+    margin: 0;
+   }
+   .selected { font-weight: bold; }
+   #list { cursor: pointer;
+		color: white;   
+   }
+   
+  </style>
+  {% dajaxice_js_import %}
+   <!--<script src="{{ MEDIA_URL }}js/jquery.js" type="text/javascript" charset="utf-8"></script>-->
+  <script src="/static/dajax/jquery.dajax.core.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="/static/js/jquery-1.10.2.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css"/>
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css"/>
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/global.css"/>
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/widgets.css"/>
+ </head>
+ <body>
+{% block content %}{% endblock %}
+ </body>
+</html>

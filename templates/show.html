@@ -1,0 +1,27 @@
+﻿{% load dict_tags %}
+{% load dajaxice_templatetags %}
+<html>
+<head>
+	{% dajaxice_js_import %}
+	<script src="/static/dajax/jquery.dajax.core.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="/static/js/jquery-1.10.2.js"></script>
+ </head>
+<body>
+<div id="data">
+{% include "show_data.html" %}    
+</div>
+<br><br>
+<script type="text/javascript">
+function send_form(){
+  data = $('#addform').serialize(true);
+  Dajaxice.dmodels.add_data(Dajax.process, {'form':data,'name':'{{name}}'});
+  return false;
+}
+</script>
+<div id="data_errors"></div>
+<form action="" method="post" id="addform" accept-charset="utf-8">{% csrf_token %}
+<table>{{form}}</table>
+<input type="button" value="Submit" onclick="send_form();"/>
+</form>
+</body>
+</html>
